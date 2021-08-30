@@ -5,9 +5,9 @@ CREATE TABLE `users` (
             `login` VARCHAR(255) NOT NULL UNIQUE,
             `password` NCHAR(32) NOT NULL,
             /*
-            * 0 - администратор (Role.ADMINISTRATOR)
-            * 1 - пользователь (Role.USER)
-            * 2 - гость (Role.GUEST)
+            * 0 - администратор Role.Administrator
+            * 1 - пользователь Role.User
+            * 2 - гость Role.Guest
             */
             `role` TINYINT NOT NULL CHECK (`role` IN (0, 1, 2)),
             CONSTRAINT PK_users PRIMARY KEY (`user_id`)
@@ -44,6 +44,8 @@ CREATE TABLE `graphic_paintings` (
             CONSTRAINT UN_grimage UNIQUE (`gr_image`),
             CONSTRAINT PK_grpaintings PRIMARY KEY (`painting_id`),
             CONSTRAINT FK_grpaintings FOREIGN KEY (`painting_id`) REFERENCES `paintings` (`paining_id`)
+            ON UPDATE CASCADE
+            ON DELETE CASCADE
 ) ;
 
 CREATE TABLE `abstract_paintings` (
@@ -55,6 +57,8 @@ CREATE TABLE `abstract_paintings` (
             CONSTRAINT UN_abimage UNIQUE (`ab_image`),
             CONSTRAINT PK_abpaintings PRIMARY KEY (`painting_id`),
             CONSTRAINT FK_abpaintings FOREIGN KEY (`painting_id`) REFERENCES `paintings` (`paining_id`)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE
 ) ;
 
 CREATE TABLE `contemporary_paintings` (
@@ -66,6 +70,8 @@ CREATE TABLE `contemporary_paintings` (
             CONSTRAINT UN_conimage UNIQUE (`con_image`),
             CONSTRAINT PK_conpaintings PRIMARY KEY (`painting_id`),
             CONSTRAINT Fk_conpaintings FOREIGN KEY (`painting_id`) REFERENCES `paintings` (`paining_id`)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE
 ) ;
 
 CREATE TABLE `realism_paintings` (
@@ -77,6 +83,8 @@ CREATE TABLE `realism_paintings` (
             CONSTRAINT UN_rlsimage UNIQUE (`rls_image`),
             CONSTRAINT PK_rlspaintings PRIMARY KEY (`painting_id`),
             CONSTRAINT FK_rlspaintings FOREIGN KEY (`painting_id`) REFERENCES `paintings` (`paining_id`)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE
  ) ;
 
 CREATE TABLE `sketches` (
@@ -98,5 +106,7 @@ CREATE TABLE `liked_paintings` (
             CONSTRAINT PK_liked PRIMARY KEY (`liked_id`),
             CONSTRAINT FK_likedUsers FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
             CONSTRAINT FK_likedPaintings FOREIGN KEY (`painting_id`) REFERENCES `paintings` (`paining_id`)
+            ON UPDATE CASCADE
+            ON DELETE CASCADE
 
-)
+) ;

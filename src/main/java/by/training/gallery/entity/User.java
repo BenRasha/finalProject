@@ -4,14 +4,18 @@ import java.util.Objects;
 
 public class User extends Entity {
 
+    public enum Role {
+        ADMINISTRATOR, USER, GUEST;
+    }
+
     private int userId;
     private String login;
     private String password;
-    private int role;
+    private Role role;
 
     public User() {}
 
-    public User(int userId, String login, String password, int role) {
+    public User(int userId, String login, String password, Role role) {
         this.userId = userId;
         this.login = login;
         this.password = password;
@@ -42,11 +46,11 @@ public class User extends Entity {
         this.password = password;
     }
 
-    public int getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(int role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
