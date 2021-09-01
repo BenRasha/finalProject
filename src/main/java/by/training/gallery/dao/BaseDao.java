@@ -17,7 +17,7 @@ public interface BaseDao <K, T extends Entity> {
     List<T> findAll() throws DAOException;
     T findEntityById(K id) throws DAOException;
     boolean delete(T t) throws DAOException;
-    boolean delete(K id) throws DAOException;
+    boolean delete(K k) throws DAOException;
     boolean create(T t) throws DAOException;
     T update(T t) throws DAOException;
 
@@ -40,4 +40,5 @@ public interface BaseDao <K, T extends Entity> {
             baseDaoLogger.error(exception);
         }
     }
+
 }
