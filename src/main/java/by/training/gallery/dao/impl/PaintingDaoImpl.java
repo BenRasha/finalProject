@@ -11,9 +11,9 @@ import java.util.List;
 
 public class PaintingDaoImpl implements PaintingDao {
 
-    private static final String SQL_SELECT_ALL_PAINTINGS = "SELECT painting_id, title, description, style FROM paintings";
+    private static final String SQL_SELECT_ALL_PAINTINGS = "SELECT painting_id, image_id, title, description, style FROM paintings";
     private static final String SQL_SELECT_ALL_PAINTINGS_BY_TITLE
-            = "SELECT painting_id, description, style FROM paintings WHERE title=?";
+            = "SELECT painting_id, image_id, description, style FROM paintings WHERE title=?";
 
     @Override
     public List<Painting> findPaintingByTitle(String patternTitle) throws DAOException {
@@ -28,6 +28,7 @@ public class PaintingDaoImpl implements PaintingDao {
             while (resultSet.next()) {
                 Painting painting = new Painting();
                 painting.setPaintingId(resultSet.getInt("painting_id"));
+                painting.setImageId(resultSet.getInt("image_id"));
                 painting.setTitle(resultSet.getString("title"));
                 painting.setDescription(resultSet.getString("description"));
                 painting.setStyle(resultSet.getString("style"));
@@ -54,6 +55,7 @@ public class PaintingDaoImpl implements PaintingDao {
             while (resultSet.next()) {
                 Painting painting = new Painting();
                 painting.setPaintingId(resultSet.getInt("painting_id"));
+                painting.setImageId(resultSet.getInt("image_id"));
                 painting.setTitle(resultSet.getString("title"));
                 painting.setDescription(resultSet.getString("description"));
                 painting.setStyle(resultSet.getString("style"));

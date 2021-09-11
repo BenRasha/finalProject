@@ -12,9 +12,9 @@ import java.util.List;
 public class ContemporaryPaintingDaoImpl implements ContemporaryPaintingDao {
 
     private static final String SQL_SELECT_ALL_CONTEMPORARY_PAINTINGS_BY_DATE
-            = "SELECT painting_id, con_size, image_id, con_material FROM contemporary_paintings WHERE con_date=?";
+            = "SELECT painting_id, con_size, con_material FROM contemporary_paintings WHERE con_date=?";
     private static final String SQL_SELECT_ALL_CONTEMPORARY_PAINTINGS
-            = "SELECT painting_id, con_size, image_id, con_material, con_date FROM contemporary_paintings";
+            = "SELECT painting_id, con_size, con_material, con_date FROM contemporary_paintings";
 
     @Override
     public List<ContemporaryPainting> findContemporaryPaintingByDate(String patternDate) throws DAOException {
@@ -30,7 +30,6 @@ public class ContemporaryPaintingDaoImpl implements ContemporaryPaintingDao {
                 ContemporaryPainting contemporaryPainting = new ContemporaryPainting();
                 contemporaryPainting.setPaintingId(resultSet.getInt("painting_id"));
                 contemporaryPainting.setSize(resultSet.getString("con_size"));
-                contemporaryPainting.setImageId(resultSet.getInt("image_id"));
                 contemporaryPainting.setMaterial(resultSet.getString("con_material"));
                 contemporaryPainting.setDate(resultSet.getDate("con_date"));
                 contemporaryPaintings.add(contemporaryPainting);
@@ -57,7 +56,6 @@ public class ContemporaryPaintingDaoImpl implements ContemporaryPaintingDao {
                 ContemporaryPainting contemporaryPainting = new ContemporaryPainting();
                 contemporaryPainting.setPaintingId(resultSet.getInt("painting_id"));
                 contemporaryPainting.setSize(resultSet.getString("con_size"));
-                contemporaryPainting.setImageId(resultSet.getInt("image_id"));
                 contemporaryPainting.setMaterial(resultSet.getString("con_material"));
                 contemporaryPainting.setDate(resultSet.getDate("con_date"));
                 contemporaryPaintings.add(contemporaryPainting);

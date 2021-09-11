@@ -12,9 +12,9 @@ import java.util.List;
 public class GraphicPaintingDaoImpl implements GraphicPaintingDao {
 
     private static final String SQL_SELECT_ALL_GRAPHIC_PAINTINGS_BY_DATE
-            = "SELECT painting_id, gr_size, image_id, gr_material FROM graphic_paintings WHERE gr_date=?";
+            = "SELECT painting_id, gr_size, gr_material FROM graphic_paintings WHERE gr_date=?";
     private static final String SQL_SELECT_ALL_GRAPHIC_PAINTINGS
-            = "SELECT painting_id, gr_size, image_id, gr_material, gr_date FROM graphic_paintings";
+            = "SELECT painting_id, gr_size, gr_material, gr_date FROM graphic_paintings";
 
     @Override
     public List<GraphicPainting> findGraphicPaintingByDate(String patternDate) throws DAOException {
@@ -30,7 +30,6 @@ public class GraphicPaintingDaoImpl implements GraphicPaintingDao {
                 GraphicPainting graphicPainting = new GraphicPainting();
                 graphicPainting.setPaintingId(resultSet.getInt("painting_id"));
                 graphicPainting.setSize(resultSet.getString("gr_size"));
-                graphicPainting.setImageId(resultSet.getInt("image_id"));
                 graphicPainting.setMaterial(resultSet.getString("gr_material"));
                 graphicPainting.setDate(resultSet.getDate("gr_date"));
                 graphicPaintings.add(graphicPainting);
@@ -57,7 +56,6 @@ public class GraphicPaintingDaoImpl implements GraphicPaintingDao {
                 GraphicPainting graphicPainting = new GraphicPainting();
                 graphicPainting.setPaintingId(resultSet.getInt("painting_id"));
                 graphicPainting.setSize(resultSet.getString("gr_size"));
-                graphicPainting.setImageId(resultSet.getInt("image_id"));
                 graphicPainting.setMaterial(resultSet.getString("gr_material"));
                 graphicPainting.setDate(resultSet.getDate("gr_date"));
                 graphicPaintings.add(graphicPainting);

@@ -28,13 +28,13 @@ public class ImageDaoImpl implements ImageDao {
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Image image = new Image();
-                image.setImage_id(resultSet.getInt("image_id"));
-                image.setMainImage(resultSet.getURL("main_image"));
-                image.setFirstImage(resultSet.getURL("first_image"));
-                image.setSecondImage(resultSet.getURL("second_image"));
-                image.setThirdImage(resultSet.getURL("third_image"));
-                image.setFourthImage(resultSet.getURL("fourth_image"));
-                image.setFifthImage(resultSet.getURL("fifth_image"));
+                image.setImageId(resultSet.getInt("image_id"));
+                image.setMainImage(resultSet.getString("main_image"));
+                image.setFirstImage(resultSet.getString("first_image"));
+                image.setSecondImage(resultSet.getString("second_image"));
+                image.setThirdImage(resultSet.getString("third_image"));
+                image.setFourthImage(resultSet.getString("fourth_image"));
+                image.setFifthImage(resultSet.getString("fifth_image"));
                 images.add(image);
             }
         } catch (SQLException exception) {
@@ -57,13 +57,13 @@ public class ImageDaoImpl implements ImageDao {
             ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL_IMAGES);
             while (resultSet.next()) {
                 Image image = new Image();
-                image.setImage_id(resultSet.getInt("image_id"));
-                image.setMainImage(resultSet.getURL("main_image"));
-                image.setFirstImage(resultSet.getURL("first_image"));
-                image.setSecondImage(resultSet.getURL("second_image"));
-                image.setThirdImage(resultSet.getURL("third_image"));
-                image.setFourthImage(resultSet.getURL("fourth_image"));
-                image.setFifthImage(resultSet.getURL("fifth_image"));
+                image.setImageId(resultSet.getInt("image_id"));
+                image.setMainImage(resultSet.getString("main_image"));
+                image.setFirstImage(resultSet.getString("first_image"));
+                image.setSecondImage(resultSet.getString("second_image"));
+                image.setThirdImage(resultSet.getString("third_image"));
+                image.setFourthImage(resultSet.getString("fourth_image"));
+                image.setFifthImage(resultSet.getString("fifth_image"));
                 images.add(image);
             }
         } catch (SQLException exception) {

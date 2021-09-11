@@ -1,23 +1,22 @@
 package by.training.gallery.entity;
 
-import java.net.URL;
 import java.util.Objects;
 
 public class Image extends Entity {
 
-    private int image_id;
-    private URL mainImage;
-    private URL firstImage;
-    private URL secondImage;
-    private URL thirdImage;
-    private URL fourthImage;
-    private URL fifthImage;
+    private int imageId;
+    private String mainImage;
+    private String firstImage;
+    private String secondImage;
+    private String thirdImage;
+    private String fourthImage;
+    private String fifthImage;
 
     public Image() {}
 
-    public Image(int image_id, URL mainImage, URL firstImage, URL secondImage, URL thirdImage,
-                 URL fourthImage, URL fifthImage) {
-        this.image_id = image_id;
+    public Image(int imageId, String mainImage, String firstImage, String secondImage, String thirdImage,
+                 String fourthImage, String fifthImage) {
+        this.imageId = imageId;
         this.mainImage = mainImage;
         this.firstImage = firstImage;
         this.secondImage = secondImage;
@@ -26,59 +25,59 @@ public class Image extends Entity {
         this.fifthImage = fifthImage;
     }
 
-    public int getImage_id() {
-        return image_id;
+    public int getImageId() {
+        return imageId;
     }
 
-    public void setImage_id(int image_id) {
-        this.image_id = image_id;
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
     }
 
-    public URL getMainImage() {
+    public String getMainImage() {
         return mainImage;
     }
 
-    public void setMainImage(URL mainImage) {
+    public void setMainImage(String mainImage) {
         this.mainImage = mainImage;
     }
 
-    public URL getFirstImage() {
+    public String getFirstImage() {
         return firstImage;
     }
 
-    public void setFirstImage(URL firstImage) {
+    public void setFirstImage(String firstImage) {
         this.firstImage = firstImage;
     }
 
-    public URL getSecondImage() {
+    public String getSecondImage() {
         return secondImage;
     }
 
-    public void setSecondImage(URL secondImage) {
+    public void setSecondImage(String secondImage) {
         this.secondImage = secondImage;
     }
 
-    public URL getThirdImage() {
+    public String getThirdImage() {
         return thirdImage;
     }
 
-    public void setThirdImage(URL thirdImage) {
+    public void setThirdImage(String thirdImage) {
         this.thirdImage = thirdImage;
     }
 
-    public URL getFourthImage() {
+    public String getFourthImage() {
         return fourthImage;
     }
 
-    public void setFourthImage(URL fourthImage) {
+    public void setFourthImage(String fourthImage) {
         this.fourthImage = fourthImage;
     }
 
-    public URL getFifthImage() {
+    public String getFifthImage() {
         return fifthImage;
     }
 
-    public void setFifthImage(URL fifthImage) {
+    public void setFifthImage(String fifthImage) {
         this.fifthImage = fifthImage;
     }
 
@@ -87,18 +86,18 @@ public class Image extends Entity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Image image = (Image) o;
-        return image_id == image.image_id && Objects.equals(mainImage, image.mainImage) && Objects.equals(firstImage, image.firstImage) && Objects.equals(secondImage, image.secondImage) && Objects.equals(thirdImage, image.thirdImage) && Objects.equals(fourthImage, image.fourthImage) && Objects.equals(fifthImage, image.fifthImage);
+        return imageId == image.imageId && Objects.equals(mainImage, image.mainImage) && Objects.equals(firstImage, image.firstImage) && Objects.equals(secondImage, image.secondImage) && Objects.equals(thirdImage, image.thirdImage) && Objects.equals(fourthImage, image.fourthImage) && Objects.equals(fifthImage, image.fifthImage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image_id, mainImage, firstImage, secondImage, thirdImage, fourthImage, fifthImage);
+        return Objects.hash(imageId, mainImage, firstImage, secondImage, thirdImage, fourthImage, fifthImage);
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Image{");
-        sb.append("id=").append(image_id).append(", main image=").append(mainImage);
+        sb.append("id=").append(imageId).append(", main image=").append(mainImage);
         sb.append(", first image=").append(firstImage).append(", second image=").append(secondImage);
         sb.append(", third image=").append(thirdImage).append(", fourth image=").append(fourthImage);
         sb.append(", fifth image=").append(fifthImage).append('}');

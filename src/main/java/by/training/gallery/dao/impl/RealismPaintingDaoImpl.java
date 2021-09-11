@@ -12,9 +12,9 @@ import java.util.List;
 public class RealismPaintingDaoImpl implements RealismPaintingDao {
 
     private static final String SQL_SELECT_ALL_REALISM_PAINTINGS_BY_DATE
-            = "SELECT painting_id, rls_size, image_id, rls_material FROM realism_paintings WHERE rls_date=?";
+            = "SELECT painting_id, rls_size, rls_material FROM realism_paintings WHERE rls_date=?";
     private static final String SQL_SELECT_ALL_REALISM_PAINTINGS
-            = "SELECT painting_id, rls_size, image_id, rls_material, rls_date FROM realism_paintings";
+            = "SELECT painting_id, rls_size, rls_material, rls_date FROM realism_paintings";
 
     @Override
     public List<RealismPainting> findRealismPaintingByDate(String patternDate) throws DAOException {
@@ -30,7 +30,6 @@ public class RealismPaintingDaoImpl implements RealismPaintingDao {
                 RealismPainting realismPainting = new RealismPainting();
                 realismPainting.setPaintingId(resultSet.getInt("painting_id"));
                 realismPainting.setSize(resultSet.getString("rls_size"));
-                realismPainting.setImageId(resultSet.getInt("image_id"));
                 realismPainting.setMaterial(resultSet.getString("rls_material"));
                 realismPainting.setDate(resultSet.getDate("rls_date"));
                 realismPaintings.add(realismPainting);
@@ -57,7 +56,6 @@ public class RealismPaintingDaoImpl implements RealismPaintingDao {
                 RealismPainting realismPainting = new RealismPainting();
                 realismPainting.setPaintingId(resultSet.getInt("painting_id"));
                 realismPainting.setSize(resultSet.getString("rls_size"));
-                realismPainting.setImageId(resultSet.getInt("image_id"));
                 realismPainting.setMaterial(resultSet.getString("rls_material"));
                 realismPainting.setDate(resultSet.getDate("rls_date"));
                 realismPaintings.add(realismPainting);

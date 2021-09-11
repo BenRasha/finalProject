@@ -15,7 +15,7 @@ import java.util.List;
 public class LikedPaintingDaoImpl implements LikedPaintingDao {
 
     private static final String SQL_SELECT_ALL_LIKED_PAINTINGS
-            = "SELECT liked_id, user_id, painting_id FROM liked_paintings";
+            = "SELECT liked_id, user_id, painting_id, sketch_id FROM liked_paintings";
 
     @Override
     public List<LikedPainting> findAll() throws DAOException {
@@ -31,6 +31,7 @@ public class LikedPaintingDaoImpl implements LikedPaintingDao {
                 likedPainting.setLikedId(resultSet.getInt("liked_id"));
                 likedPainting.setUserId(resultSet.getInt("user_id"));
                 likedPainting.setPaintingId(resultSet.getInt("painting_id"));
+                likedPainting.setSketchId(resultSet.getInt("sketch_id"));
                 likedPaintings.add(likedPainting);
             }
         } catch (SQLException exception) {

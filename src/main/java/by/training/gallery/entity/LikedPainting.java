@@ -7,13 +7,15 @@ public class LikedPainting extends Entity {
     private int likedId;
     private int userId;
     private int paintingId;
+    private int sketchId;
 
     public LikedPainting() {}
 
-    public LikedPainting(int likedId, int userId, int paintingId) {
+    public LikedPainting(int likedId, int userId, int paintingId, int sketchId) {
         this.likedId = likedId;
         this.userId = userId;
         this.paintingId = paintingId;
+        this.sketchId = sketchId;
     }
 
     public int getLikedId() {
@@ -40,24 +42,32 @@ public class LikedPainting extends Entity {
         this.paintingId = paintingId;
     }
 
+    public int getSketchId() {
+        return sketchId;
+    }
+
+    public void setSketchId(int sketchId) {
+        this.sketchId = sketchId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LikedPainting that = (LikedPainting) o;
-        return likedId == that.likedId && userId == that.userId && paintingId == that.paintingId;
+        return likedId == that.likedId && userId == that.userId && paintingId == that.paintingId && sketchId == that.sketchId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(likedId, userId, paintingId);
+        return Objects.hash(likedId, userId, paintingId, sketchId);
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Liked Painting{");
         sb.append("id=").append(likedId).append(", user id=").append(userId);
-        sb.append(", painting id=").append(paintingId).append('}');
+        sb.append(", painting id=").append(", sketch id=").append(sketchId).append(paintingId).append('}');
         return sb.toString();
     }
 }

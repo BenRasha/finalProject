@@ -5,14 +5,16 @@ import java.util.Objects;
 public class Painting extends Entity {
 
     private int paintingId;
+    private int imageId;
     private String title;
     private String description;
     private String style;
 
     public Painting() {}
 
-    public Painting(int paintingId, String title, String description, String style) {
+    public Painting(int paintingId, int imageId, String title, String description, String style) {
         this.paintingId = paintingId;
+        this.imageId = imageId;
         this.title = title;
         this.description = description;
         this.style = style;
@@ -24,6 +26,14 @@ public class Painting extends Entity {
 
     public void setPaintingId(int paintingId) {
         this.paintingId = paintingId;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
     }
 
     public String getTitle() {
@@ -50,23 +60,12 @@ public class Painting extends Entity {
         this.style = style;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Painting painting = (Painting) o;
-        return paintingId == painting.paintingId && Objects.equals(title, painting.title) && Objects.equals(description, painting.description) && Objects.equals(style, painting.style);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(paintingId, title, description, style);
-    }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Painting{");
-        sb.append("id=").append(paintingId).append(", tittle=").append(title);
+        sb.append("id=").append(paintingId).append(", image id=").append(imageId).append(", tittle=").append(title);
         sb.append(", description=").append(description).append(", style=").append(style).append('}');
         return sb.toString();
     }

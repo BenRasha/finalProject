@@ -12,9 +12,9 @@ import java.util.List;
 public class AbstractPaintingDaoImpl implements AbstractPaintingDao {
 
     private static final String SQL_SELECT_ALL_ABSTRACT_PAINTINGS_BY_DATE
-            = "SELECT painting_id, ab_size, image_id, ab_material FROM abstract_paintings WHERE ab_date=?";
+            = "SELECT painting_id, ab_size, ab_material FROM abstract_paintings WHERE ab_date=?";
     private static final String SQL_SELECT_ALL_ABSTRACT_PAINTINGS
-            = "SELECT painting_id, ab_size, image_id, ab_material, ab_date FROM abstract_paintings";
+            = "SELECT painting_id, ab_size, ab_material, ab_date FROM abstract_paintings";
 
     @Override
     public List<AbstractPainting> findAbstractPaintingByDate(String patterDate) throws DAOException {
@@ -30,7 +30,6 @@ public class AbstractPaintingDaoImpl implements AbstractPaintingDao {
                 AbstractPainting abstractPainting = new AbstractPainting();
                 abstractPainting.setPaintingId(resultSet.getInt("painting_id"));
                 abstractPainting.setSize(resultSet.getString("ab_size"));
-                abstractPainting.setImageId(resultSet.getInt("image_id"));
                 abstractPainting.setMaterial(resultSet.getString("ab_material"));
                 abstractPainting.setDate(resultSet.getDate("ab_date"));
                 abstractPaintings.add(abstractPainting);
@@ -57,7 +56,6 @@ public class AbstractPaintingDaoImpl implements AbstractPaintingDao {
                 AbstractPainting abstractPainting = new AbstractPainting();
                 abstractPainting.setPaintingId(resultSet.getInt("painting_id"));
                 abstractPainting.setSize(resultSet.getString("ab_size"));
-                abstractPainting.setImageId(resultSet.getInt("image_id"));
                 abstractPainting.setMaterial(resultSet.getString("ab_material"));
                 abstractPainting.setDate(resultSet.getDate("ab_date"));
                 abstractPaintings.add(abstractPainting);

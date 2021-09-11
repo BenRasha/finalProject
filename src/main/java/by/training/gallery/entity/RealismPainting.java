@@ -7,16 +7,14 @@ public class RealismPainting extends Entity {
 
     private int paintingId;
     private String size;
-    private int imageId;
     private String material;
     private Date date;
 
     public RealismPainting() {}
 
-    public RealismPainting(int paintingId, String size, int imageId, String material, Date date) {
+    public RealismPainting(int paintingId, String size, String material, Date date) {
         this.paintingId = paintingId;
         this.size = size;
-        this.imageId = imageId;
         this.material = material;
         this.date = date;
     }
@@ -35,14 +33,6 @@ public class RealismPainting extends Entity {
 
     public void setSize(String size) {
         this.size = size;
-    }
-
-    public int getImageId() {
-        return imageId;
-    }
-
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
     }
 
     public String getMaterial() {
@@ -66,19 +56,19 @@ public class RealismPainting extends Entity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RealismPainting that = (RealismPainting) o;
-        return paintingId == that.paintingId && size.equals(that.size) && Objects.equals(imageId, that.imageId) && Objects.equals(material, that.material) && Objects.equals(date, that.date);
+        return paintingId == that.paintingId && size.equals(that.size) && Objects.equals(material, that.material) && Objects.equals(date, that.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(paintingId, size, imageId, material, date);
+        return Objects.hash(paintingId, size, material, date);
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Realism Painting{");
         sb.append("id=").append(paintingId).append(", size=").append(size);
-        sb.append(", imageId=").append(imageId).append(", material").append(material);
+        sb.append(", material").append(material);
         sb.append(", date=").append(date).append('}');
         return sb.toString();
     }
