@@ -1,17 +1,173 @@
-INSERT INTO `users` (user_id, login, password, role)
+INSERT INTO users (id, login, password, role)
 VALUES
 (2, 'vanya', 'vanya_password', 1),
-(3, 'veronika', 'veronika_password',1)
+(3, 'another_user', 'user_password',1)
 ;
 
-INSERT INTO `users_info` (user_id, email, name, surname, address, phone)
+INSERT INTO users_info (user_id, email, name, surname, city, street, phone)
 VALUES
-(1, '', 'Veronika', 'Luzan', '', '+37529'),
-(2, 'bben.rasha@gmail.com', 'Ivan', 'Grishchenko', 'Voenny Gorodok 234', '+375296307947'),
-(3, '', 'Veronika', 'Luzan', '', '+37529')
+(1, 'bben.rasha@gmail.com', 'Vanya', 'Grishchenko', 'Minsk', 'Voenny gorodok 234', '+375296307947'),
+(2, 'somemail@gmail.com', 'Vanya', 'Grishchenko', 'Minsk', 'Voenny gorodok 234', '+375296307947'),
+(3, 'user@gmail.com', 'User', 'UserSurname', 'Minsk', 'Brovki 5', '+375292346457')
 ;
 
-INSERT INTO `paintings` (painting_id, title, description, style)
+INSERT INTO paintings(id, title, style, size, material, date)
 VALUES
-(1, '', '')
+(1, 'ANARCHY', 'abstract', '120 x 100', 'Oil', '14.04.2021'),
+(2, 'ARSONIST', 'abstract', '120 x 100', 'Oil', '18.02.2021'),
+(3, 'AURORA', 'abstract', '120 x 100', 'Oil', '24.05.2021'),
+(4, 'CHOICE', 'contemporary', '120 x 80', 'Oil', '05.02.2021'),
+(5, 'IN YOUR HANDS', 'contemporary', '70 x 50', 'Coal, acrylic', '18.02.2020'),
+(6, 'MOON ILLUSION', 'contemporary', '70 x 50', 'Coal, ink', '28.07.2019'),
+(7, 'SOLAR ECLIPSE', 'contemporary', '70 x 50', 'Coal, acrylic', '26.03.2020'),
+(8, 'WHITE LIGHT', 'contemporary', '120 x 100', 'Oil', '12.03.2021'),
+(9, 'YOURS FOREVER', 'contemporary', '70 x 50', 'Coal, acrylic', '07.03.2020'),
+(10, 'CIGARETTE', 'realism', '40 x 30', 'Coal, ink', '01.08.2019'),
+(11, 'HTI', 'realism', 'd70', 'Oil', '05.09.2021'),
+(12, 'STONE CLOUDS', 'realism', '50 x 35', 'Coal, ink', '20.08.2019'),
+(13, 'THE SECOND BIRTH', 'realism', '40 x 30', 'Coal, ink', '11.08.2019')
+;
+
+INSERT INTO sketches(id, title, date)
+VALUES
+(1, 'RED', '01.01.2010'),
+(2, 'BLACK', '01.01.2017')
+;
+
+INSERT INTO painting_photos(painting_id, photo_path)
+VALUES
+(1,'src/main/webapp/img/abstract/anarchy_120×100/first.jpg'),
+(1,'src/main/webapp/img/abstract/anarchy_120×100/second.jpg'),
+(1,'src/main/webapp/img/abstract/anarchy_120×100/third.jpg'),
+(1,'src/main/webapp/img/abstract/anarchy_120×100/fourth.jpg'),
+(1,'src/main/webapp/img/abstract/anarchy_120×100/fifth.jpg'),
+(1,'src/main/webapp/img/abstract/anarchy_120×100/sixth.jpg'),
+(1,'src/main/webapp/img/abstract/anarchy_120×100/seventh.jpg'),
+(1,'src/main/webapp/img/abstract/anarchy_120×100/eighth.jpg'),
+(1,'src/main/webapp/img/abstract/anarchy_120×100/ninth.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/tenth.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/eleventh.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/twelfth.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/thirteenth.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/fourteenth.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/fifteenth.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/sixteenth.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/seventeenth.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/eighteenth.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/nineteenth.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/twentieth.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/twentyfirst.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/twentysecond.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/twentythird.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/twentyfourth.jpg'),
+(1, 'src/main/webapp/img/abstract/anarchy_120×100/twentyfifth.jpg'),
+(2, 'src/main/webapp/img/abstract/arsonist_120×100/first.jpg'),
+(2, 'src/main/webapp/img/abstract/arsonist_120×100/second.jpg'),
+(2, 'src/main/webapp/img/abstract/arsonist_120×100/third.jpg'),
+(2, 'src/main/webapp/img/abstract/arsonist_120×100/fourth.jpg'),
+(2, 'src/main/webapp/img/abstract/arsonist_120×100/fifth.jpg'),
+(2, 'src/main/webapp/img/abstract/arsonist_120×100/sixth.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/first.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/second.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/third.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/fourth.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/fifth.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/sixth.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/seventh.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/eighth.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/ninth.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/tenth.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/eleventh.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/twelfth.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/thirteenth.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/fourteenth.jpg'),
+(3, 'src/main/webapp/img/abstract/aurora_120×100/fifteenth.jpg'),
+(4, 'src/main/webapp/img/contemporary/choice_120×80/first.jpg'),
+(4, 'src/main/webapp/img/contemporary/choice_120×80/second.jpg'),
+(4, 'src/main/webapp/img/contemporary/choice_120×80/third.jpg'),
+(4, 'src/main/webapp/img/contemporary/choice_120×80/fourth.jpg'),
+(4, 'src/main/webapp/img/contemporary/choice_120×80/fifth.jpg'),
+(4, 'src/main/webapp/img/contemporary/choice_120×80/sixth.jpg'),
+(4, 'src/main/webapp/img/contemporary/choice_120×80/seventh.jpg'),
+(5, 'src/main/webapp/img/contemporary/inYourHands_70×50/first.jpeg'),
+(5, 'src/main/webapp/img/contemporary/inYourHands_70×50/second.jpg'),
+(5, 'src/main/webapp/img/contemporary/inYourHands_70×50/third.jpg'),
+(5, 'src/main/webapp/img/contemporary/inYourHands_70×50/fourth.jpg'),
+(5, 'src/main/webapp/img/contemporary/inYourHands_70×50/fifth.jpg'),
+(5, 'src/main/webapp/img/contemporary/inYourHands_70×50/sixth.jpg'),
+(6, 'src/main/webapp/img/contemporary/moonIllusion_70×50/first.jpeg'),
+(6, 'src/main/webapp/img/contemporary/moonIllusion_70×50/second.jpeg'),
+(7, 'src/main/webapp/img/contemporary/solarEclipse_70×50/first.jpeg'),
+(7, 'src/main/webapp/img/contemporary/solarEclipse_70×50/second.jpg'),
+(7, 'src/main/webapp/img/contemporary/solarEclipse_70×50/third.jpeg'),
+(7, 'src/main/webapp/img/contemporary/solarEclipse_70×50/fourth.jpg'),
+(7, 'src/main/webapp/img/contemporary/solarEclipse_70×50/fifth.jpeg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/first.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/second.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/third.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/fourth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/fifth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/sixth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/seventh.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/eighth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/ninth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/tenth.jpeg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/eleventh.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/twelfth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/thirteenth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/fourteenth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/fifteenth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/sixteenth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/seventeenth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/eighteenth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/nineteenth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/twentieth.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/twentyfirst.jpg'),
+(8, 'src/main/webapp/img/contemporary/whiteLight_120×100/twentysecond.jpg'),
+(9, 'src/main/webapp/img/contemporary/yoursForever_70×50/first.jpeg'),
+(9, 'src/main/webapp/img/contemporary/yoursForever_70×50/second.jpeg'),
+(9, 'src/main/webapp/img/contemporary/yoursForever_70×50/third.jpeg'),
+(9, 'src/main/webapp/img/contemporary/yoursForever_70×50/fourth.jpg'),
+(10, 'src/main/webapp/img/realism/cigarette_40×30/first.jpeg'),
+(11, 'src/main/webapp/img/realism/hti_d70/first.jpg'),
+(11, 'src/main/webapp/img/realism/hti_d70/second.jpg'),
+(11, 'src/main/webapp/img/realism/hti_d70/third.jpg'),
+(11, 'src/main/webapp/img/realism/hti_d70/fourth.jpg'),
+(11, 'src/main/webapp/img/realism/hti_d70/fifth.jpg'),
+(11, 'src/main/webapp/img/realism/hti_d70/sixth.jpg'),
+(12, 'src/main/webapp/img/realism/stoneClouds_50×35/first.jpeg'),
+(13, 'src/main/webapp/img/realism/theSecondBirth_40×30/first.jpeg')
+;
+
+INSERT INTO sketches_photos(sketch_id, photo_path)
+VALUES
+(1, 'src/main/webapp/img/sk/first/first.jpg'),
+(1, 'src/main/webapp/img/sk/first/second.jpg'),
+(1, 'src/main/webapp/img/sk/first/third.jpg'),
+(1, 'src/main/webapp/img/sk/first/fourth.jpg'),
+(1, 'src/main/webapp/img/sk/first/fifth.jpg'),
+(1, 'src/main/webapp/img/sk/first/sixth.jpeg'),
+(1, 'src/main/webapp/img/sk/first/seventh.jpeg'),
+(1, 'src/main/webapp/img/sk/first/eighth.jpeg'),
+(1, 'src/main/webapp/img/sk/first/tenth.jpeg'),
+(1, 'src/main/webapp/img/sk/first/eleventh.jpg'),
+(1, 'src/main/webapp/img/sk/first/twelfth.jpeg'),
+(1, 'src/main/webapp/img/sk/first/thirteenth.jpeg'),
+(1, 'src/main/webapp/img/sk/first/fourteenth.jpeg'),
+(1, 'src/main/webapp/img/sk/first/fifteenth.jpg'),
+(1, 'src/main/webapp/img/sk/first/sixteenth.jpg'),
+(1, 'src/main/webapp/img/sk/first/seventeenth.jpg'),
+(1, 'src/main/webapp/img/sk/first/eighteenth.jpg'),
+(1, 'src/main/webapp/img/sk/first/nineteenth.jpg'),
+(1, 'src/main/webapp/img/sk/first/twentieth.jpg'),
+(1, 'src/main/webapp/img/sk/first/twentyFirst.jpg'),
+(1, 'src/main/webapp/img/sk/first/twentySecond.jpg'),
+(1, 'src/main/webapp/img/sk/first/twentyThird.jpg'),
+(1, 'src/main/webapp/img/sk/first/twentyFourth.jpg'),
+(2, 'src/main/webapp/img/sk/second/first.jpg'),
+(2, 'src/main/webapp/img/sk/second/second.jpeg'),
+(2, 'src/main/webapp/img/sk/second/third.jpeg'),
+(2, 'src/main/webapp/img/sk/second/fourth.jpeg'),
+(2, 'src/main/webapp/img/sk/second/fifth.jpeg')
+;
 

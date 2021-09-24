@@ -1,5 +1,8 @@
 package by.training.gallery.entity;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 public class User extends Entity {
@@ -15,6 +18,17 @@ public class User extends Entity {
 
         public int getValue() {
             return value;
+        }
+
+        public void setValue(int value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "Role{" +
+                    "value=" + value +
+                    '}';
         }
     }
 
@@ -61,7 +75,8 @@ public class User extends Entity {
     }
 
     public void setRole(int value) {
-        this.role = Role.valueOf(String.valueOf(value));
+        List<Role> values = Collections.unmodifiableList(Arrays.asList(Role.values()));
+        this.role = values.get(value);
     }
 
     @Override

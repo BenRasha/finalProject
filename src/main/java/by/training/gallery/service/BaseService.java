@@ -9,5 +9,8 @@ public interface BaseService <K, T extends Entity> {
 
     List<T> findAll() throws ServiceException;
     T findEntityById(K id) throws ServiceException;
+    void delete(K id) throws ServiceException;
+    void delete(T entity) throws ServiceException;
+    T create(T entity) throws ServiceException;
 
 }

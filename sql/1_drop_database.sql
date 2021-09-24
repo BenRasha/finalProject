@@ -1,1 +1,1 @@
-DROP DATABASE IF EXISTS `gallery_db`;
+DROP DATABASE IF EXISTS gallery_db;

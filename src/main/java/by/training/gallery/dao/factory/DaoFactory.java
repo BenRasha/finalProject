@@ -1,21 +1,18 @@
 package by.training.gallery.dao.factory;
 
-import by.training.gallery.dao.BaseDao;
+import by.training.gallery.dao.*;
 import by.training.gallery.dao.impl.*;
 
 public class DaoFactory {
 
     private static final DaoFactory instance = new DaoFactory();
-    private final BaseDao abstractPainting = new AbstractPaintingDaoImpl();
-    private final BaseDao contemporaryPainting = new ContemporaryPaintingDaoImpl();
-    private final BaseDao graphicPainting = new GraphicPaintingDaoImpl();
-    private final BaseDao images = new ImageDaoImpl();
-    private final BaseDao likePaintings = new LikedPaintingDaoImpl();
-    private final BaseDao paintings = new PaintingDaoImpl();
-    private final BaseDao realismPainting = new RealismPaintingDaoImpl();
-    private final BaseDao sketches = new SketchDaoImpl();
-    private final BaseDao users = new UserDaoImpl();
-    private final BaseDao userInfo = new UserInfoDaoImpl();
+    private final UserDao userDao = new UserDaoImpl();
+    private final UserInfoDao userInfoDao = new UserInfoDaoImpl();
+    private final PaintingDao paintingDao = new PaintingDaoImpl();
+    private final SketchDao sketchDao = new SketchDaoImpl();
+    private final SketchPhotoDao sketchPhotoDao = new SketchPhotoDaoImpl();
+    private final PaintingPhotoDao paintingPhotoDao = new PaintingPhotoDaoImpl();
+    private final LikedPaintingDao likedPaintingDao = new LikedPaintingDaoImpl();
 
     private DaoFactory() {}
 
@@ -23,43 +20,31 @@ public class DaoFactory {
         return instance;
     }
 
-    public BaseDao getAbstractPainting() {
-        return abstractPainting;
+    public UserDao getUserDao() {
+        return  userDao;
     }
 
-    public BaseDao getContemporaryPainting() {
-        return contemporaryPainting;
+    public UserInfoDao getUserInfoDao() {
+        return userInfoDao;
     }
 
-    public BaseDao getGraphicPainting() {
-        return graphicPainting;
+    public PaintingDao getPaintingDao() {
+        return paintingDao;
     }
 
-    public BaseDao getImages() {
-        return images;
+    public SketchDao getSketchDao() {
+        return sketchDao;
     }
 
-    public BaseDao getLikePaintings() {
-        return likePaintings;
+    public SketchPhotoDao getSketchPhotoDao() {
+        return sketchPhotoDao;
     }
 
-    public BaseDao getPaintings() {
-        return paintings;
+    public PaintingPhotoDao getPaintingPhotoDao() {
+        return paintingPhotoDao;
     }
 
-    public BaseDao getRealismPainting() {
-        return realismPainting;
-    }
-
-    public BaseDao getSketches() {
-        return sketches;
-    }
-
-    public BaseDao getUsers() {
-        return users;
-    }
-
-    public BaseDao getUserInfo() {
-        return userInfo;
+    public LikedPaintingDao getLikedPaintingDao() {
+        return likedPaintingDao;
     }
 }

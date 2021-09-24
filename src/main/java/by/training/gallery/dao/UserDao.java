@@ -5,8 +5,8 @@ import by.training.gallery.entity.User;
 
 import java.util.List;
 
-public interface UserDao extends BaseDao <Integer, User> {
+public abstract class UserDao extends AbstractDao<Integer, User> {
 
-    List<User> findUserByLogin(String patternLogin) throws DAOException;
+    public abstract List<User> findUserByLogin(String patternLogin) throws DAOException;
 
 }
